@@ -14,7 +14,7 @@ class Api::V1::MembersController < ApplicationController
     def show
       # your code goes here
       @member = Member.find(params[:id])
-        render json: @member, status: 201
+        render json: @member, status: 200
     end
   
     # POST /members
@@ -34,7 +34,7 @@ class Api::V1::MembersController < ApplicationController
       # your code godes here
       @member = Member.find(params[:id])
         if @member.update(member_params)
-            render json: @member, status: 201
+            render json: @member, status: 200
         else
             render json: { error:
             "Unable to update member: #{@member.errors.full_messages.to_sentence}"},
